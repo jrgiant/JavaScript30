@@ -13,7 +13,10 @@
                 document.querySelector('div[data-key="' + $keyEvent.which + '"]').addEventListener('transitionend', function() {
                     this.classList.remove('playing');
                 });
-                document.querySelector('audio[data-key="' + $keyEvent.which + '"]').play();
+                var $audio = document.querySelector('audio[data-key="' + $keyEvent.which + '"]');
+                if ($audio == null){return false;}
+                $audio.currentTime = 0;
+                $audio.play();
 
             } catch (err) {
 
