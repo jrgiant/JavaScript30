@@ -31,29 +31,49 @@
 
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
-
+    const inventors1500 = inventors.filter(a => a.year > 1499 && a.year < 1600);
+    console.table(inventors);
+    console.table(inventors1500);
     // Array.prototype.map()
     // 2. Give us an array of the inventors' first and last names
-
+    const invertorNames = inventors.map(a => `${a.first} ${a.last}`);
+    console.log(invertorNames);
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
-
+    const inventorsSorted = inventors.sort((a,b) => b.year - a.year);
+    console.table(inventorsSorted);
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live?
-
+    const inventorAge = inventors.reduce((curr,a) => { return (a.passed - a.year) + curr},0);
+    console.log(inventorAge);
     // 5. Sort the inventors by years lived
-
+    const inventorsSortedByAge = inventors.sort((a,b)=>(b.passed - b.year)-(a.passed - a.year));
+    console.table(inventorsSortedByAge);
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
+    // const allLinks = document.querySelectorAll('.mw-category-group a');
+    // const allLinksArray = Array.from(allLinks);
+    // const bWithDe = allLinksArray.filter(a => a.innerText.indexOf('de') > -1);
+    // const b_De = allLinksArray.filter(a => a.innerText.indexOf('de') > -1);
+    // const ans = b_De.map(a => a.innerText);
+    // console.log(ans);
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
-
+    const peopleSorted = people.sort();
+    console.log(peopleSorted);
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
-
+    const dataTallied = data.reduce((accum, item) =>{
+      if(!accum[item]){
+        accum[item] =0;
+      }
+      accum[item]++;
+      return accum;
+    },{});
+    console.log(dataTallied);
   </script>
 </body>
 </html>
