@@ -1,0 +1,33 @@
+{
+  "name": "javascript30",
+  "version": "1.0.0",
+  "description": "a conversion of the javascript30 into older versions of javascript and css",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrgiant/JavaScript30.git"
+  },
+  "keywords": [
+    "babel",
+    "javascript30"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jrgiant/JavaScript30/issues"
+  },
+  "homepage": "https://github.com/jrgiant/JavaScript30#readme",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.1",
+    "babel-html": "^0.5.1",
+    "babel-preset-es2015": "^6.24.1",
+    "bower": "^1.8.0",
+    "less": "^2.7.2",
+    "mocha": "^3.4.2",
+    "yarn": "^0.24.5"
+  }
+}
