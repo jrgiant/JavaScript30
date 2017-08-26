@@ -46,25 +46,13 @@
 <script>
 const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
 const articles = ['The ', "A ", "An "];
-bands.sort((a,b)=>{
-  //if string contains an article then chop off the article for comparison
-  let aCompare = a;
-  let bCompare =b;
-  articles.forEach(c=>{
-    if (a.startsWith(c)) aCompare = a.slice(c.length);
-    if (b.startsWith(c)) bCompare = b.slice(c.length);
-  })
-  return aCompare.localeCompare(bCompare);
-})
+function strip(s){
+  return s.replace(/^an |the |a /i, '');
+}
+bands.sort((a,b)=> strip(a).localeCompare(strip(b)));
 
 //use map to put the informaiton in to the html
-document.querySelector('#bands').innerHTML = bands.map(a =>{
-  return `
-  <li>
-  ${a}
-  </li>
-  `
-}).join('')
+document.querySelector('#bands').innerHTML = bands.map(a =>`<li>${a}</li>`).join('');
 </script>
 
 </body>
