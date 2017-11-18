@@ -21,7 +21,7 @@ h1 {
   margin-bottom: 0;
 }
 
-.score {
+.score, .highScore {
   background:rgba(255,255,255,0.2);
   padding:0 3rem;
   line-height:1;
