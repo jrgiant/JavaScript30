@@ -39,7 +39,15 @@
 
 <button></button>
 <script>
+const divs = document.querySelectorAll('div');
 
+function logText(e) {
+  console.log(this.classList.value);
+}
+
+divs.forEach(div => div.addEventListener('click', logText),{capture:true, once:true});
+//runs the events on the way down the tree as oppsoed to runing up the tree.
+//once will only run the event listener once and then self remove.
 </script>
 </body>
 </html>
